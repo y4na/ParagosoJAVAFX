@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pnWelcome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paragosojavafx.HelloController">
+   <children>
+      <VBox fx:id="pnHome" prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <Pane prefHeight="500.0" prefWidth="500.0">
+               <children>
+                  <Label layoutX="114.0" layoutY="14.0" prefHeight="145.0" prefWidth="272.0" text="JAVA FX LISOD" textFill="WHITE">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="32.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnLogout" layoutX="196.0" layoutY="281.0" mnemonicParsing="false" onAction="#onLogoutClick" onMouseClicked="#updateButton" prefHeight="50.0" prefWidth="108.0" text="Logout" textAlignment="CENTER" textFill="#831283">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                     </font></Button>
+                  <ColorPicker fx:id="colorPick" layoutX="188.0" layoutY="117.0" />
+                  <ProgressIndicator layoutX="237.0" layoutY="182.0" progress="0.0" />
+               </children>
+            </Pane>
+         </children></VBox>
+   </children>
+</AnchorPane>
