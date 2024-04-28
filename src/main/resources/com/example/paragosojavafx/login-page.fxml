@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="690.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paragosojavafx.LoginController">
+   <children>
+      <AnchorPane layoutX="293.0" layoutY="44.0" prefHeight="359.0" prefWidth="353.0" style="-fx-background-radius: 25; -fx-background-color: #f2f3f4;">
+         <children>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="21.0" prefHeight="59.0" prefWidth="222.0" text="WELCOME!">
+               <font>
+                  <Font name="Century Gothic Bold" size="31.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.997551052652368">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <TextField layoutX="89.0" layoutY="102.0" prefHeight="28.0" prefWidth="208.0" promptText="Username" styleClass="text-field" stylesheets="@styles.css">
+               <font>
+                  <Font name="Corbel" size="14.0" />
+               </font></TextField>
+            <Label layoutX="89.0" layoutY="195.0" prefHeight="17.0" prefWidth="100.0" text="Forgot Password?" />
+            <PasswordField layoutX="89.0" layoutY="152.0" prefHeight="28.0" prefWidth="208.0" promptText="Password" styleClass="text-field" stylesheets="@styles.css">
+               <font>
+                  <Font name="Corbel" size="14.0" />
+               </font></PasswordField>
+            <Label layoutX="89.0" layoutY="296.0" prefHeight="17.0" prefWidth="136.0" text="Don't have an account?">
+               <font>
+                  <Font name="Century Gothic" size="11.0" />
+               </font></Label>
+            <Button fx:id="btnSignIn" layoutX="89.0" layoutY="246.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="208.0" stylesheets="@styles.css" text="Sign In">
+               <font>
+                  <Font name="Corbel Bold" size="19.0" />
+               </font></Button>
+            <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="66.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@assets/user.png" />
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="16.0" layoutX="66.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/padlock.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_signUp1" layoutX="225.0" layoutY="292.0" mnemonicParsing="false" style="-fx-background-color: transparent;" stylesheets="@styles.css" text="Sign Up">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </Button>
+<!--            <Button fx:id="signInPage" layoutX="78.0" layoutY="21.0" mnemonicParsing="false" stylesheets="styles.css" text="SIGN IN">-->
+<!--               <font>-->
+<!--                  <Font name="Tahoma Bold" size="15.0" />-->
+<!--               </font></Button>-->
+<!--            <Button fx:id="signUpPage" layoutX="173.0" layoutY="21.0" mnemonicParsing="false" stylesheets="styles.css" text="SIGN UP">-->
+<!--               <font>-->
+<!--                  <Font name="Tahoma Bold" size="15.0" />-->
+<!--               </font></Button>-->
+         </children></AnchorPane>
+      <AnchorPane fx:id="sideBarLogin" layoutX="21.0" layoutY="22.0" prefHeight="405.0" prefWidth="298.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to right, #000000, #131111);">
+         <children>
+            <ImageView fitHeight="253.0" fitWidth="238.0" layoutX="30.0" layoutY="84.0" managed="false" pickOnBounds="true" preserveRatio="true">
+               <Image url="@assets/AudioSphere_Icon_Light.png" />
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

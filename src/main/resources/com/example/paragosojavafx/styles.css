@@ -1,0 +1,86 @@
+.root {
+  -fx-background-color: transparent;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #919191;
+    -fx-prompt-text-fill: #919191;
+    -fx-font-size: 14px;
+    -fx-font-family: "Corbel";
+
+}
+
+.text-field:focused {
+    -fx-border-color: #000000;
+}
+
+.text-field .text {
+    -fx-padding: 0.2em 0.5em;
+    -fx-background-color: transparent;
+}
+
+.text-field .prompt-text {
+    -fx-text-fill: #ccc;
+    -fx-font-size: 12px;
+    -fx-translate-y: -1.5em;
+}
+
+.text-field:focused .prompt-text {
+    -fx-text-fill: #007bff;
+    -fx-translate-y: -2.5em;
+}
+
+
+#btnSignIn {
+    -fx-background-color: linear-gradient(to right top, #000000, #131111);
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+#btnSignIn:hover {
+    -fx-background-color: #333333;
+}
+
+#signInPage, #signUpPage {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: transparent;
+}
+
+#signInPage:hover, #signUpPage:hover {
+    -fx-border-color: black;
+}
+
+
+#btnSignUp {
+    -fx-background-color: linear-gradient(to right top, #000000, #131111);
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+}
+
+#btnSignUp:hover {
+    -fx-background-color: #333333;
+}
+
+#btn_signUp1 {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000; /* Set the text color */
+    -fx-font-size: 12px; /* Set the font size */
+}
+
+#btn_signUp1:hover {
+    -fx-underline: true;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+
+
