@@ -45,18 +45,26 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (sideBarLogin!= null) {
+            System.out.println("fefes1");
+
             sideBarLogin.setOnMousePressed(mouseEvent -> {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
             });
+            System.out.println("fefes2");
 
             sideBarLogin.setOnMouseDragged(mouseEvent -> {
                 if (stage!= null) {
+                    System.out.println("fefes3");
+
                     stage.setX(mouseEvent.getScreenX() - x);
                     stage.setY(mouseEvent.getScreenY() - y);
                 }
             });
         }
+    }
+    void dragged(){
+
     }
 
     public void login(){
@@ -64,17 +72,7 @@ public class LoginController implements Initializable {
     }
     @FXML
     private void showRegisterPage() throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("register-page.fxml"));  // Ensure path is correct
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-
-
-        Stage stage = (Stage) btnSignIn.getScene().getWindow();
-        stage.setTitle("Registration");
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-
+       Main.goToRegister();
     }
 
 }

@@ -17,8 +17,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.paragosojavafx.Main.stage;
+
+
 public class RegisterController implements Initializable {
-    private Stage stage;
+
     private double x = 0, y = 0;
     @FXML
     private Button btnSignUp;
@@ -41,20 +44,22 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField tfusername;
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         if (sideBarLogin!= null) {
+            System.out.println("fefes");
             sideBarLogin.setOnMousePressed(mouseEvent -> {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
             });
+            System.out.println("fefes2");
 
             sideBarLogin.setOnMouseDragged(mouseEvent -> {
                 if (stage!= null) {
+                    System.out.println("fefes3");
                     stage.setX(mouseEvent.getScreenX() - x);
                     stage.setY(mouseEvent.getScreenY() - y);
                 }
@@ -62,17 +67,11 @@ public class RegisterController implements Initializable {
         }
     }
 
+
+
+
     @FXML
     private void showLoginPage() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("login-page.fxml"));  // Ensure path is correct
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-
-
-        Stage stage = (Stage) btnSignUp.getScene().getWindow();
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-
+            Main.goToLogin();
     }
 }
