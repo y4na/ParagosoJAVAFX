@@ -32,10 +32,12 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
             controller.setStage(primaryStage);
+
         } catch (IOException e) {
             System.err.println("Error loading FXML file: " + e.getMessage());
             System.exit(1);
         }
+
     }
 
 
