@@ -1,19 +1,13 @@
 package com.example.paragosojavafx;
 
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +16,6 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
     private double x = 0, y = 0;
-
 
     @FXML
     private AnchorPane sideBarLogin;
@@ -38,41 +31,63 @@ public class LoginController implements Initializable {
     @FXML
     private AnchorPane root;
 
+    @FXML
+    private TextField tfusername, tfpasswordVisible;
+
+    @FXML
+    private PasswordField tfpassword;
+    @FXML
+    private CheckBox cbShowHidePass;
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (sideBarLogin!= null) {
-            System.out.println("fefes1");
-
+        if (sideBarLogin != null) {
             sideBarLogin.setOnMousePressed(mouseEvent -> {
                 x = mouseEvent.getSceneX();
                 y = mouseEvent.getSceneY();
             });
-            System.out.println("fefes2");
 
             sideBarLogin.setOnMouseDragged(mouseEvent -> {
-                if (stage!= null) {
-                    System.out.println("fefes3");
-
+                if (stage != null) {
                     stage.setX(mouseEvent.getScreenX() - x);
                     stage.setY(mouseEvent.getScreenY() - y);
                 }
             });
         }
-    }
-    void dragged(){
-
+        tfpassword.textProperty().bindBidirectional(tfpasswordVisible.textProperty());
     }
 
-    public void login(){
-
-    }
     @FXML
-    private void showRegisterPage() throws IOException{
-       Main.goToRegister();
+    private void togglePassword() {
+        if (cbShowHidePass.isSelected()) {
+            tfpassword.setVisible(false);
+            tfpasswordVisible.setVisible(true);
+        } else {
+            tfpassword.setVisible(true);
+            tfpasswordVisible.setVisible(false);
+        }
     }
 
+    @FXML
+    private void loginUser() {
+        String username = tfusername.getText();
+        String password = tfpassword.getText();
+
+        boolean authenticated = RetrieveData.authenticateUser(username, password);
+        if (authenticated) {
+            System.out.println("Login successful");
+            Main.goToHomePage();
+        } else {
+            System.out.println("Invalid username or password");
+        }
+    }
+
+    @FXML
+    private void showRegisterPage() throws IOException {
+        Main.goToRegister();
+    }
 }

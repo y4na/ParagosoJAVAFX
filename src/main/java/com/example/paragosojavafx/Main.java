@@ -8,39 +8,40 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
-
 
 public class Main extends Application {
     static FXMLLoader loaderlogin;
-
     static FXMLLoader loadersignup;
+    static FXMLLoader loaderhome;
     static LoginController loginController;
     static RegisterController registerController;
+    static HomeController homeController;
     static Stage stage;
 
     @Override
     public void start(Stage primaryStage) {
-        stage=primaryStage;
+        stage = primaryStage;
         loaderlogin = new FXMLLoader(getClass().getResource("login-page.fxml"));
-        loadersignup = new FXMLLoader(getClass().getResource("register-Page.fxml"));
+        loadersignup = new FXMLLoader(getClass().getResource("register-page.fxml"));
+        loaderhome = new FXMLLoader(getClass().getResource("home-page.fxml"));
+
         try {
             Parent root = loaderlogin.load();
-            Parent root2=loadersignup.load();
-            registerController= loadersignup.getController();
-            loginController= loaderlogin.getController();
+            Parent root2 = loadersignup.load();
+            Parent root3 = loaderhome.load();
 
-            if(registerController==null){
-                System.out.println("hehehe");
-            }
+            registerController = loadersignup.getController();
+            loginController = loaderlogin.getController();
+            homeController = loaderhome.getController();
+
             Scene scene = new Scene(root);
-            Scene scene2= new Scene(root2);
+            Scene scene2 = new Scene(root2);
+            Scene scene3 = new Scene(root3);
+
             scene2.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-
-
             scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+            scene3.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
             primaryStage.setTitle("AudioSphere");
 
@@ -56,17 +57,15 @@ public class Main extends Application {
             System.err.println("Error loading FXML file: " + e.getMessage());
             System.exit(1);
         }
-
     }
-    static void goToLogin(){
 
+    static void goToLogin() {
         try {
             Parent root = loaderlogin.getRoot();
-            System.out.println("here");
             Scene scene = root.getScene();
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.show();
-
             loginController.setStage(stage);
 
         } catch (Exception e) {
@@ -75,14 +74,14 @@ public class Main extends Application {
             System.exit(1);
         }
     }
-    static void goToRegister(){
 
+    static void goToRegister() {
         try {
             Parent root = loadersignup.getRoot();
-            System.out.println("here");
             Scene scene = root.getScene();
             scene.setFill(Color.TRANSPARENT);
             stage.setScene(scene);
+            stage.centerOnScreen();
             stage.show();
             loginController.setStage(stage);
         } catch (Exception e) {
@@ -92,7 +91,19 @@ public class Main extends Application {
         }
     }
 
-
+    public static void goToHomePage() {
+        try {
+            Parent root = loaderhome.getRoot();
+            Scene scene = root.getScene();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } catch (Exception e) {
+            System.err.println("Error loading FXML file: " + e.getMessage());
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);

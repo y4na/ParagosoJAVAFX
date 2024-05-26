@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:controller="com.example.paragosojavafx.RegisterController"  fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="690.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="690.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paragosojavafx.RegisterController">
     <children>
         <AnchorPane layoutX="281.0" layoutY="49.0" prefHeight="451.0" prefWidth="358.0" style="-fx-background-radius: 25; -fx-background-color: #f2f3f4;">
             <children>
@@ -23,16 +23,26 @@
                         <Font name="Corbel" size="14.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="tfpassword" layoutX="89.0" layoutY="225.0" prefHeight="28.0" prefWidth="208.0" promptText="Password" styleClass="text-field" stylesheets="@styles.css">
-                    <font>
-                        <Font name="Corbel" size="14.0" />
-                    </font></PasswordField>
-            <TextField fx:id="tfconfirmpassword" layoutX="89.0" layoutY="287.0" prefHeight="28.0" prefWidth="208.0" promptText="Confirm Password" styleClass="text-field" stylesheets="@styles.css">
+            <TextField fx:id="tfpasswordVisible" layoutX="89.0" layoutY="212.0" prefHeight="28.0" prefWidth="208.0" styleClass="text-field" stylesheets="@styles.css" visible="false">
                <font>
                   <Font name="Corbel" size="14.0" />
                </font>
             </TextField>
-                <Button fx:id="btnSignUp" layoutX="89.0" layoutY="356.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="208.0" stylesheets="@styles.css" text="Sign Up">
+                <PasswordField fx:id="tfpassword" layoutX="89.0" layoutY="212.0" prefHeight="28.0" prefWidth="208.0" promptText="Password" styleClass="text-field" stylesheets="@styles.css">
+                    <font>
+                        <Font name="Corbel" size="14.0" />
+                    </font></PasswordField>
+            <PasswordField fx:id="tfconfirmpassword" layoutX="89.0" layoutY="267.0" prefHeight="28.0" prefWidth="208.0" promptText="Confirm Password" styleClass="text-field" stylesheets="@styles.css">
+               <font>
+                  <Font name="Corbel" size="14.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="tfconfirmpasswordVisible" layoutX="89.0" layoutY="267.0" onAction="#togglePassword" prefHeight="28.0" prefWidth="208.0" styleClass="text-field" stylesheets="@styles.css" visible="false">
+               <font>
+                  <Font name="Corbel" size="14.0" />
+               </font>
+            </TextField>
+                <Button fx:id="btnSignUp" layoutX="89.0" layoutY="356.0" mnemonicParsing="false" onAction="#registerUser" prefHeight="37.0" prefWidth="208.0" stylesheets="@styles.css" text="Sign Up">
                     <font>
                         <Font name="Corbel Bold" size="19.0" />
                     </font></Button>
@@ -45,6 +55,7 @@
                   <Font name="Century Gothic Bold" size="11.0" />
                </font>
             </Button>
+            <CheckBox fx:id="cbShowHidePass" layoutX="97.0" layoutY="319.0" mnemonicParsing="false" onAction="#togglePassword" text="Show Password" />
                 <!--            <Button fx:id="signInPage" layoutX="78.0" layoutY="21.0" mnemonicParsing="false" stylesheets="styles.css" text="SIGN IN">-->
                 <!--               <font>-->
                 <!--                  <Font name="Tahoma Bold" size="15.0" />-->
